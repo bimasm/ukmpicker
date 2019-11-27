@@ -21,18 +21,18 @@
 				<h4 class="panel-title">Form Tambah UKM</h4>
 			</div>
 			<div class="panel-body">
-				<form action="" method="POST" class="form-horizontal">
+				<form action="{{route('PostAdminTambahUkm')}}" method="POST" class="form-horizontal" enctype="multipart/form-data">
 					@csrf				
 					<div class="form-group">
 						<label for="input-rounded" class="col-sm-2 control-label">Nama</label>
 						<div class="col-sm-10">
-							<input name="nama" type="text" class="form-control input-rounded" id="input-rounded">
+							<input name="namaukm" type="text" class="form-control input-rounded" id="input-rounded">
 						</div>
 					</div>
 					<div class="form-group">
 						<label for="exampleInputFile" class="col-sm-2 control-label">Deskripsi</label>
 						<div class="col-sm-10">
-							<textarea class="area" rows="4" cols="120">
+							<textarea name="deskripsi" class="area" rows="4" cols="120">
 
 							</textarea>
 						</div>

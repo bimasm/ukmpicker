@@ -21,12 +21,12 @@
 				<h4 class="panel-title">Form Tambah Jurusan</h4>
 			</div>
 			<div class="panel-body">
-				<form action="" method="POST" class="form-horizontal">
+				<form action="{{route('PostAdminTambahJurusan')}}" method="POST" class="form-horizontal">
 					@csrf				
 					<div class="form-group">
 						<label for="input-rounded" class="col-sm-2 control-label">Nama Jurusan</label>
 						<div class="col-sm-10">
-							<input name="nama" type="text" class="form-control input-rounded" id="input-rounded">
+							<input name="namajurusan" type="text" class="form-control input-rounded" id="input-rounded">
 						</div>
 					</div>
 

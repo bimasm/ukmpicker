@@ -43,10 +43,16 @@ Route::get('/admin/mahasiswa/tambah', 'AdminController@view_tambah_mahasiswa')
 
 Route::get('/admin/jurusan/tambah', 'AdminController@view_tambah_jurusan')
 ->name('ViewAdminTambahJurusan')->middleware('auth:admin');
+Route::post('/admin/jurusan/tambah', 'AdminActionsController@tambahjurusan')
+->name('PostAdminTambahJurusan')->middleware('auth:admin');
 
 Route::get('/admin/ukm/tambah', 'AdminController@view_tambah_ukm')
 ->name('ViewAdminTambahUkm')->middleware('auth:admin');
+Route::post('/admin/ukm/tambah', 'AdminActionsController@tambahukm')
+->name('PostAdminTambahUkm')->middleware('auth:admin');
 
 Route::get('/admin/pengurus/tambah', 'AdminController@view_tambah_pengurus')
 ->name('ViewAdminTambahPengurus')->middleware('auth:admin');
+Route::post('/admin/pengurus/tambah', 'AdminActionsController@tambahpengurus')
+->name('PostAdminTambahPengurus')->middleware('auth:admin');
 

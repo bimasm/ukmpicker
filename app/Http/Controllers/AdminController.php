@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use App\Ukm;
 
 class AdminController extends Controller
 {
@@ -52,7 +53,8 @@ class AdminController extends Controller
 
     public function view_tambah_pengurus()
     {
-        return view('admin.pengurus.pengurus-tambah');
+        $ukm=Ukm::all();
+        return view('admin.pengurus.pengurus-tambah',compact('ukm'));
     }
 
     public function view_tambah_mahasiswa()

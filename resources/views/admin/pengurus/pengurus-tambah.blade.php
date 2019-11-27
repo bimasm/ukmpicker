@@ -21,7 +21,7 @@
 				<h4 class="panel-title">Form Tambah Pengurus</h4>
 			</div>
 			<div class="panel-body">
-				<form action="" method="POST" class="form-horizontal">
+				<form action="{{route('PostAdminTambahPengurus')}}" method="POST" class="form-horizontal">
 					@csrf				
 					<div class="form-group">
 						<label for="input-rounded" class="col-sm-2 control-label">Nama</label>
@@ -32,7 +32,7 @@
 					<div class="form-group">
 						<label for="input-rounded" class="col-sm-2 control-label">Username</label>
 						<div class="col-sm-10">
-							<input name="username" type="number" class="form-control input-rounded" id="input-rounded">
+							<input name="username" type="text" class="form-control input-rounded" id="input-rounded">
 						</div>
 					</div>
 					<div class="form-group">
@@ -44,12 +44,10 @@
 					<div class="form-group">
 						<label class="col-sm-2 control-label">UKM</label>
 						<div class="col-sm-10">
-							<select class="form-control m-b-sm">
-								<option name="ukm" value="">1</option>
-								<option>2</option>
-								<option>3</option>
-								<option>4</option>
-								<option>5</option>
+							<select name="ukm" class="form-control m-b-sm">
+								@foreach($ukm as $u)
+								<option value="{{$u->id}}">{{$u->nama}}</option>
+								@endforeach
 							</select>
 						</div>
 					</div>
