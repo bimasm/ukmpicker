@@ -16,34 +16,37 @@ Route::get('/', function () {
 });
 
 Route::get('/login', 'AdminController@view_login')
-->name('ViewLogin');
+->name('ViewLogin')->middleware('guest');
+Route::post('/login', 'LoginController@postLogin');
+Route::get('/logout', 'LoginController@logout');
+Route::get('/signout', 'LoginController@signout');
 
 //////////////////////////////////////////////////////////////////////////// admin show
 Route::get('/admin/dashboard', 'AdminController@view_dashboard')
-->name('ViewAdminDashboard');
+->name('ViewAdminDashboard')->middleware('auth:admin');
 
 Route::get('/admin/jurusan', 'AdminController@view_show_jurusan')
-->name('ViewAdminShowJurusan');
+->name('ViewAdminShowJurusan')->middleware('auth:admin');
 
 Route::get('/admin/ukm', 'AdminController@view_show_ukm')
-->name('ViewAdminShowUkm');
+->name('ViewAdminShowUkm')->middleware('auth:admin');
 
 Route::get('/admin/pengurus', 'AdminController@view_show_pengurus')
-->name('ViewAdminShowPengurus');
+->name('ViewAdminShowPengurus')->middleware('auth:admin');
 
 Route::get('/admin/mahasiswa', 'AdminController@view_show_mahasiswa')
-->name('ViewAdminShowMahasiswa');
+->name('ViewAdminShowMahasiswa')->middleware('auth:admin');
 
 //////////////////////////////////////////////////////////////////////////// admin tambah
 Route::get('/admin/mahasiswa/tambah', 'AdminController@view_tambah_mahasiswa')
-->name('ViewAdminTambahMahasiswa');
+->name('ViewAdminTambahMahasiswa')->middleware('auth:admin');
 
 Route::get('/admin/jurusan/tambah', 'AdminController@view_tambah_jurusan')
-->name('ViewAdminTambahJurusan');
+->name('ViewAdminTambahJurusan')->middleware('auth:admin');
 
 Route::get('/admin/ukm/tambah', 'AdminController@view_tambah_ukm')
-->name('ViewAdminTambahUkm');
+->name('ViewAdminTambahUkm')->middleware('auth:admin');
 
 Route::get('/admin/pengurus/tambah', 'AdminController@view_tambah_pengurus')
-->name('ViewAdminTambahPengurus');
+->name('ViewAdminTambahPengurus')->middleware('auth:admin');
 

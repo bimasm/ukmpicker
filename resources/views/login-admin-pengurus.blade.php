@@ -38,12 +38,13 @@
                                     <div class="col-md-6">
                                     </div>
                                     <div class="col-md-6">
-                                        <form action="index.html">
+                                        <form action="/login" method="post">
+                                            @csrf
                                             <div class="form-group">
-                                                <input type="email" class="form-control input-rounded" placeholder="Email" required>
+                                                <input type="text" class="form-control input-rounded" placeholder="Email" name="username" required>
                                             </div>
                                             <div class="form-group">
-                                                <input type="password" class="form-control input-rounded" placeholder="Password" required>
+                                                <input type="password" class="form-control input-rounded" placeholder="Password" name="password" required>
                                             </div>
                                             <button type="submit" class="btn btn-success btn-block btn-rounded">Login</button>
                                             <p class="text-center m-t-xs text-sm">Do not have an account?</p>
