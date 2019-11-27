@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\Ukm;
+use App\Jurusan;
 
 class AdminController extends Controller
 {
@@ -21,7 +22,8 @@ class AdminController extends Controller
 
     public function view_show_jurusan()
     {
-    	return view('admin.jurusan.jurusan-show');
+        $data=Jurusan::all();
+    	return view('admin.jurusan.jurusan-show',compact('data'));
     }
 
     public function view_show_ukm()
@@ -59,7 +61,8 @@ class AdminController extends Controller
 
     public function view_tambah_mahasiswa()
     {
-        return view('admin.mahasiswa.mahasiswa-tambah');
+        $jurusan=Jurusan::all();
+        return view('admin.mahasiswa.mahasiswa-tambah',compact('jurusan'));
     }
 
 }

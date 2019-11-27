@@ -6,6 +6,7 @@ use Illuminate\Http\Request;
 use App\Jurusan;
 use App\Ukm;
 use App\Pengurus;
+use App\Mahasiswa;
 
 class AdminActionsController extends Controller
 {
@@ -41,5 +42,22 @@ class AdminActionsController extends Controller
     	$prs->id_ukm=$request->ukm;
     	$prs->save();
         return redirect()->route('ViewAdminTambahPengurus');
+    }
+    public function tambahmhs(Request $request)
+    {
+        $prs= new Mahasiswa();
+    	$prs->nama=$request->nama;
+    	$prs->nim=$request->nim;
+    	$prs->password=Hash::make($request->password);
+    	$prs->id_jurusan=$request->jurusan;
+    	$prs->save();
+        return redirect()->route('ViewAdminTambahMahasiswa');
+    }
+    public function editjurusan(Request $request)
+    {
+    	$jrs=Jurusan::find($request->id);
+    	$jrs->nama=$request->namajurusan;
+    	$jrs->save();
+        return redirect()->route('ViewAdminShowJurusan');
     }
 }

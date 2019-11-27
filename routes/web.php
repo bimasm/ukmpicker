@@ -40,6 +40,8 @@ Route::get('/admin/mahasiswa', 'AdminController@view_show_mahasiswa')
 //////////////////////////////////////////////////////////////////////////// admin tambah
 Route::get('/admin/mahasiswa/tambah', 'AdminController@view_tambah_mahasiswa')
 ->name('ViewAdminTambahMahasiswa')->middleware('auth:admin');
+Route::post('/admin/mahasiswa/tambah', 'AdminActionsController@tambahmhs')
+->name('PostAdminTambahMahasiswa')->middleware('auth:admin');
 
 Route::get('/admin/jurusan/tambah', 'AdminController@view_tambah_jurusan')
 ->name('ViewAdminTambahJurusan')->middleware('auth:admin');
@@ -55,4 +57,9 @@ Route::get('/admin/pengurus/tambah', 'AdminController@view_tambah_pengurus')
 ->name('ViewAdminTambahPengurus')->middleware('auth:admin');
 Route::post('/admin/pengurus/tambah', 'AdminActionsController@tambahpengurus')
 ->name('PostAdminTambahPengurus')->middleware('auth:admin');
+
+
+//edit admin
+Route::post('/admin/jurusan/edit', 'AdminActionsController@editjurusan')
+->name('PostAdminEditJurusan')->middleware('auth:admin');
 

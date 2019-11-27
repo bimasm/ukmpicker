@@ -21,7 +21,7 @@
 				<h4 class="panel-title">Form Tambah Mahasiswa</h4>
 			</div>
 			<div class="panel-body">
-				<form action="" method="POST" class="form-horizontal">
+				<form action="{{route('PostAdminTambahMahasiswa')}}" method="POST" class="form-horizontal">
 					@csrf				
 					<div class="form-group">
 						<label for="input-rounded" class="col-sm-2 control-label">Nama</label>
@@ -32,7 +32,7 @@
 					<div class="form-group">
 						<label for="input-rounded" class="col-sm-2 control-label">NIM</label>
 						<div class="col-sm-10">
-							<input name="nim" type="number" class="form-control input-rounded" id="input-rounded">
+							<input name="nim" type="text" class="form-control input-rounded" id="input-rounded">
 						</div>
 					</div>
 					<div class="form-group">
@@ -44,12 +44,10 @@
 					<div class="form-group">
 						<label class="col-sm-2 control-label">Jurusan</label>
 						<div class="col-sm-10">
-							<select class="form-control m-b-sm">
-								<option name="jurusan" value="">1</option>
-								<option>2</option>
-								<option>3</option>
-								<option>4</option>
-								<option>5</option>
+							<select name="jurusan" class="form-control m-b-sm">
+								@foreach($jurusan as $jr)
+								<option value="{{$jr->id}}">{{$jr->nama}}</option>
+								@endforeach
 							</select>
 						</div>
 					</div>
