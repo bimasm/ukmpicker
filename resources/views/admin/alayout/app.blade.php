@@ -73,11 +73,11 @@
                                 </a>
                                 <ul class="dropdown-menu dropdown-list" role="menu">
                                     <li role="presentation"><a href="profile.html"><i class="fa fa-user"></i>Profile</a></li>
-                                    <li role="presentation"><a href="login.html"><i class="fa fa-sign-out m-r-xs"></i>Log out</a></li>
+                                    <li role="presentation"><a href="/signout"><i class="fa fa-sign-out m-r-xs"></i>Log out</a></li>
                                 </ul>
                             </li>
                             <li>
-                                <a href="login.html" class="log-out waves-effect waves-button waves-classic">
+                                <a href="/signout" class="log-out waves-effect waves-button waves-classic">
                                     <span><i class="fa fa-sign-out m-r-xs"></i>Log out</span>
                                 </a>
                             </li>

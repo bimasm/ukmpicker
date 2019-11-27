@@ -54,31 +54,32 @@
 		</div>
 	</div>
 </div>
+
 @foreach($data as $dt)
 <div class="modal fade" id="modal{{$dt->id}}" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
-  <div class="modal-dialog" role="document">
-    <div class="modal-content">
-      <div class="modal-header">
-        <h5 class="modal-title" id="exampleModalLabel">Edit Jurusan</h5>
-        
-      </div>
-      <div class="modal-body">
-        <div class="form-group">
-    <label for="exampleInputEmail1">Nama Jurusan</label>
-    <form action="{{route('PostAdminEditJurusan')}}" method="post">
-    	@csrf
-    <input type="text" name="namajurusan" class="form-control" value="{{$dt->nama}}">
-    <input type="hidden" name="id" value="{{$dt->id}}">
-    
-  </div>
-      </div>
-      <div class="modal-footer">
-        <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
-        <button type="submit" class="btn btn-primary">Save changes</button>
-        </form>
-      </div>
-    </div>
-  </div>
+	<div class="modal-dialog" role="document">
+		<div class="modal-content">
+			<div class="modal-header">
+				<h5 class="modal-title" id="exampleModalLabel">Edit Jurusan</h5>
+			</div>
+			<div class="modal-body">
+				<div class="form-group">
+					<label for="exampleInputEmail1">Nama Jurusan</label>
+					<form action="{{route('PostAdminEditJurusan')}}" method="post">
+						@csrf
+						<input type="text" name="namajurusan" class="form-control" value="{{$dt->nama}}">
+						<input type="hidden" name="id" value="{{$dt->id}}">
+
+					</div>
+				</div>
+				<div class="modal-footer">
+					<button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+					<button type="submit" class="btn btn-primary">Save changes</button>
+				</form>
+			</div>
+		</div>
+	</div>
 </div>
 @endforeach
+
 @endsection

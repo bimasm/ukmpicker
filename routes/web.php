@@ -59,7 +59,24 @@ Route::post('/admin/pengurus/tambah', 'AdminActionsController@tambahpengurus')
 ->name('PostAdminTambahPengurus')->middleware('auth:admin');
 
 
-//edit admin
+///////////////////////////////////////////////////////////////////////////// edit admin
 Route::post('/admin/jurusan/edit', 'AdminActionsController@editjurusan')
 ->name('PostAdminEditJurusan')->middleware('auth:admin');
+
+///////////////////////////////////////////////////////////////////////////// Mahasiswa
+Route::get('/mahasiswa/dashboard', 'MahasiswaController@view_dashboard')
+->name('ViewMahasiswaDashboard')->middleware('auth:mahasiswa');
+
+///////////////////////////////////////////////////////////////////////////// Pengurus
+Route::get('/pengurus/dashboard', 'PengurusController@view_dashboard')
+->name('ViewPengurusDashboard')->middleware('auth:pengurus');
+
+Route::get('/pengurus/ukm', 'PengurusController@view_show_ukm')
+->name('ViewPengurusShowUkm')->middleware('auth:pengurus');
+
+Route::get('/pengurus/mahasiswa', 'PengurusController@view_show_mahasiswa')
+->name('ViewPengurusShowMahasiswa')->middleware('auth:pengurus');
+
+Route::get('/pengurus/edit-profile', 'PengurusController@view_show_edit_profile')
+->name('ViewPengurusShowEditProfile')->middleware('auth:pengurus');
 

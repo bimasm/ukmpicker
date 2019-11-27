@@ -18,7 +18,7 @@ class Authenticate extends Middleware
       return redirect('/pengurus/dashboard');
       
     } else if (Auth::guard('mahasiswa')->check()) {
-      return redirect('/dashboard');
+      return redirect('/mahasiswa/dashboard');
       
     }
   }

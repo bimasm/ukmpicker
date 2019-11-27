@@ -21,38 +21,20 @@ class LoginController extends Controller
       return redirect()->intended('/admin/dashboard');
     } else if (Auth::guard('pengurus')->attempt(['username' => $request->username, 'password' => $request->password])) {
       return redirect()->intended('/pengurus/dashboard');
-    } 
+    }else if (Auth::guard('mahasiswa')->attempt(['nim' => $request->username, 'password' => $request->password])) {
+      return redirect()->intended('/mahasiswa/dashboard');
+    }
     return redirect('/login');
   }
 
-  public function postLoginMhs(Request $request)
-  {
-    // dd($request);
-      
-    $this->validate($request, [
-      'nim' => 'required',
-      'password' => 'required'
-    ]);
-      
-    if (Auth::guard('mahasiswa')->attempt(['nim' => $request->nim, 'password' => $request->password])) {
-      return redirect()->intended('/dashboard');
-    }
-    return redirect('/');
-  }
-
-  public function logout()
-  {
-    if (Auth::guard('mahasiswa')->check()) {
-      Auth::guard('mahasiswa')->logout();
-    }
-    return redirect('/');
-  }
   public function signout()
   {
     if (Auth::guard('admin')->check()) {
       Auth::guard('admin')->logout();
     } else if (Auth::guard('pengurus')->check()) {
       Auth::guard('pengurus')->logout();
+    }else if (Auth::guard('mahasiswa')->check()) {
+      Auth::guard('mahasiswa')->logout();
     }
     return redirect('/login');
   }
