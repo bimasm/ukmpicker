@@ -60,4 +60,53 @@ class AdminActionsController extends Controller
     	$jrs->save();
         return redirect()->route('ViewAdminShowJurusan');
     }
+    public function editukm(Request $request)
+    {
+    	$jrs=Ukm::find($request->id);
+    	$jrs->nama=$request->namaukm;
+    	$jrs->deskripsi=$request->deskripsiukm;
+    	$jrs->save();
+        return redirect()->route('ViewAdminShowUkm');
+    }
+    public function editpengurus(Request $request)
+    {
+    	$jrs=Pengurus::find($request->id);
+    	$jrs->nama=$request->nama;
+    	$jrs->username=$request->username;
+    	$jrs->password=Hash::make($request->password);
+    	$jrs->save();
+        return redirect()->route('ViewAdminShowPengurus');
+    }
+    public function editmahasiswa(Request $request)
+    {
+    	$jrs=Mahasiswa::find($request->id);
+    	$jrs->nama=$request->nama;
+    	$jrs->password=Hash::make($request->password);
+    	$jrs->save();
+        return redirect()->route('ViewAdminShowMahasiswa');
+    }
+    public function deletemahasiswa($id)
+    {
+        $data=Mahasiswa::find($id);
+        $data->delete();
+        return redirect()->route('ViewAdminShowMahasiswa');
+    }
+    public function deletepengurus($id)
+    {
+        $data=Pengurus::find($id);
+        $data->delete();
+        return redirect()->route('ViewAdminShowPengurus');
+    }
+    public function deleteukm($id)
+    {
+        $data=Ukm::find($id);
+        $data->delete();
+        return redirect()->route('ViewAdminShowUkm');
+    }
+    public function deletejurusan($id)
+    {
+        $data=Jurusan::find($id);
+        $data->delete();
+        return redirect()->route('ViewAdminShowJurusan');
+    }
 }

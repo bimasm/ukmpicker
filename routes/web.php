@@ -62,6 +62,22 @@ Route::post('/admin/pengurus/tambah', 'AdminActionsController@tambahpengurus')
 ///////////////////////////////////////////////////////////////////////////// edit admin
 Route::post('/admin/jurusan/edit', 'AdminActionsController@editjurusan')
 ->name('PostAdminEditJurusan')->middleware('auth:admin');
+Route::post('/admin/ukm/edit', 'AdminActionsController@editukm')
+->name('PostAdminEditUkm')->middleware('auth:admin');
+Route::post('/admin/pengurus/edit', 'AdminActionsController@editpengurus')
+->name('PostAdminEditPengurus')->middleware('auth:admin');
+Route::post('/admin/mahasiswa/edit', 'AdminActionsController@editmahasiswa')
+->name('PostAdminEditMahasiswa')->middleware('auth:admin');
+//delete admin
+Route::get('/admin/deletemhs/{id}', 'AdminActionsController@deletemahasiswa')
+->name('AdminDeleteMahasiswa')->middleware('auth:admin');
+Route::get('/admin/deletepengurus/{id}', 'AdminActionsController@deletepengurus')
+->name('AdminDeletePengurus')->middleware('auth:admin');
+Route::get('/admin/deleteukm/{id}', 'AdminActionsController@deleteukm')
+->name('AdminDeleteUkm')->middleware('auth:admin');
+Route::get('/admin/deletejurusan/{id}', 'AdminActionsController@deletejurusan')
+->name('AdminDeleteJurusan')->middleware('auth:admin');
+
 
 ///////////////////////////////////////////////////////////////////////////// Mahasiswa
 Route::get('/mahasiswa/dashboard', 'MahasiswaController@view_dashboard')

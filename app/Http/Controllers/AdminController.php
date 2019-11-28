@@ -5,6 +5,8 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use App\Ukm;
 use App\Jurusan;
+use App\Pengurus;
+use App\Mahasiswa;
 
 class AdminController extends Controller
 {
@@ -28,17 +30,20 @@ class AdminController extends Controller
 
     public function view_show_ukm()
     {
-    	return view('admin.ukm.ukm-show');
+        $data=Ukm::all();
+    	return view('admin.ukm.ukm-show',compact('data'));
     }
 
     public function view_show_pengurus()
     {
-        return view('admin.pengurus.pengurus-show');
+        $data=Pengurus::all();
+        return view('admin.pengurus.pengurus-show',compact('data'));
     }
 
     public function view_show_mahasiswa()
     {
-        return view('admin.mahasiswa.mahasiswa-show');
+        $data=Mahasiswa::all();
+        return view('admin.mahasiswa.mahasiswa-show',compact('data'));
     }
 
 

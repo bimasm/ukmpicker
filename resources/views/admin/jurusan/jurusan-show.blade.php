@@ -44,7 +44,7 @@
 						<td class="no">{{$no++}}</td>
 						<td>{{$dt->nama}}</td>
 						<td class="ac">
-							<button type="button" class="btn btn-danger btn-addon btn-rounded btn-sm"><i class="fa fa-trash"></i> Delete</button>
+							<a href="{{url('admin/deletejurusan').'/'.$dt->id}}"><button type="button" class="btn btn-danger btn-addon btn-rounded btn-sm"><i class="fa fa-trash"></i> Delete</button></a>
 							<button type="button" class="btn btn-warning btn-addon btn-rounded btn-sm" data-toggle="modal" data-target="#modal{{$dt->id}}"><i class="fa fa-edit"></i> Edit</button>
 						</td>
 					</tr>
