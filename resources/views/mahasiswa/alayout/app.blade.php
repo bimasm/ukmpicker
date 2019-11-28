@@ -68,7 +68,7 @@
                         <ul class="nav navbar-nav navbar-right">
                             <li class="dropdown">
                                 <a href="#" class="dropdown-toggle waves-effect waves-button waves-classic" data-toggle="dropdown">
-                                    <span class="user-name">Mahasiswa<i class="fa fa-angle-down"></i></span>
+                                    <span class="user-name">{{Auth::guard('mahasiswa')->user()->nama}}<i class="fa fa-angle-down"></i></span>
                                     <img class="img-circle avatar" src="assets/images/avatar1.png" width="40" height="40" alt="">
                                 </a>
                                 <ul class="dropdown-menu dropdown-list" role="menu">
@@ -76,11 +76,7 @@
                                     <li role="presentation"><a href="/signout"><i class="fa fa-sign-out m-r-xs"></i>Log out</a></li>
                                 </ul>
                             </li>
-                            <li>
-                                <a href="/signout" class="log-out waves-effect waves-button waves-classic">
-                                    <span><i class="fa fa-sign-out m-r-xs"></i>Log out</span>
-                                </a>
-                            </li>
+                            
                         </ul>
                     </div>
                 </div>

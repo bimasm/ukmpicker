@@ -15,7 +15,6 @@ class CreatePendaftarTable extends Migration
     {
         Schema::create('pendaftar', function (Blueprint $table) {
             $table->increments('id');
-            $table->string('keterangan');
             $table->integer('id_ukm')->unsigned();
             $table->foreign('id_ukm')->references('id')->on('ukm')
             ->onDelete('cascade')

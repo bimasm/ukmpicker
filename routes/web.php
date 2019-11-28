@@ -88,6 +88,9 @@ Route::get('/mahasiswa/ukm', 'MahasiswaController@view_show_ukm')
 
 Route::get('/mahasiswa/pendaftaran', 'MahasiswaController@view_show_pendafatran')
 ->name('ViewMahasiswaPendaftaran')->middleware('auth:mahasiswa');
+//mahasiswa input
+Route::post('/mahasiswa/pilih', 'MahasiswaActionsController@daftar')
+->name('PostMahasiswaPendaftaran')->middleware('auth:mahasiswa');
 
 ///////////////////////////////////////////////////////////////////////////// Pengurus
 Route::get('/pengurus/dashboard', 'PengurusController@view_dashboard')

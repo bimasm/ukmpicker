@@ -36,11 +36,17 @@
 					</tr>
 				</tfoot>
 				<tbody>
+					@php
+					$no=1;
+					@endphp
+					@foreach($data as $dt)
 					<tr>
-						<td class="no">1</td>
-						<td>UKM Djawa</td>
-						<td>Status</td>
+						<td class="no">{{$no++}}</td>
+						<td>{{\App\Ukm::where('id',$dt->id_ukm)->value('nama')}}</td>
+						<td>{{$dt->status}}</td>
+						
 					</tr>
+					@endforeach
 				</tbody>
 			</table>  
 		</div>
