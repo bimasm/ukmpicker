@@ -16,9 +16,9 @@ class PengurusController extends Controller
     	return view('pengurus.ukm.ukm-show');
     }
 
-    public function view_show_mahasiswa()
+    public function view_show_pendaftar()
     {
-    	return view('pengurus.mahasiswa.mahasiswa-show');
+    	return view('pengurus.pendaftar.pendaftar-show');
     }
 
     public function view_show_edit_profile()

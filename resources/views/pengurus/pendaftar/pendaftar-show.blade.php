@@ -1,22 +1,22 @@
 @extends('pengurus.alayout.app')
 
 @section('title')
-<title>Mahasiswa | Pengurus</title>
+<title>Pendaftar | Pengurus</title>
 @endsection
 
 @section('title-breadcumb-1')
-<h3>Mahasiswa</h3>
+<h3>Pendaftar</h3>
 @endsection
 
 @section('title-breadcumb-2')
-<li class="active">Mahasiswa masuk</li>
+<li class="active">Pendaftar masuk</li>
 @endsection
 
 @section('konten')
 
 <div class="panel panel-white u-rad">
 	<div class="panel-heading clearfix">
-		<h4 class="panel-title">Tabel Data Mahasiswa Masuk</h4>
+		<h4 class="panel-title">Tabel Data Pendaftar Masuk</h4>
 	</div>
 	<div class="panel-body">
 		<div class="table-responsive">

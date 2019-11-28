@@ -115,44 +115,36 @@
                             </a>
                         </li>
 
-                        {{-- <li class="droplink 
+                        <li class="
                         {{ (request()->routeIs(
 
-                            'ViewAdminShowJurusan',
-                            'ViewAdminTambahJurusan'
+                            'ViewMahasiswaUkm'
 
-                            )) ? 'active open' : '' }}
+                            )) ? 'active' : '' }}
                             ">
-                            <a href="#" class="waves-effect waves-button active">
-                                <span class="menu-icon glyphicon glyphicon-briefcase"></span>
-                                <p>Jurusan</p>
-                                <span class="arrow"></span>
+                            <a href="{{route('ViewMahasiswaUkm')}}" class="waves-effect waves-button">
+                                <span class="menu-icon glyphicon glyphicon-tower"></span>
+                                <p>UKM</p>
                             </a>
-                            <ul class="sub-menu">
-                                <li class="
-                                {{ (request()->routeIs(
+                        </li>
 
-                                    'ViewAdminShowJurusan'
+                        <li class="
+                        {{ (request()->routeIs(
 
-                                    )) ? 'active open' : '' }}
-                                    ">
-                                    <a href="{{route('ViewAdminShowJurusan')}}">Show Data</a>
-                                </li>
-                                <li class="
-                                {{ (request()->routeIs(
+                            'ViewMahasiswaPendaftaran'
 
-                                    'ViewAdminTambahJurusan'
+                            )) ? 'active' : '' }}
+                            ">
+                            <a href="{{route('ViewMahasiswaPendaftaran')}}" class="waves-effect waves-button">
+                                <span class="menu-icon glyphicon glyphicon-list-alt"></span>
+                                <p>Pendaftaran</p>
+                            </a>
+                        </li>
 
-                                    )) ? 'active open' : '' }}
-                                    ">
-                                    <a href="{{route('ViewAdminTambahJurusan')}}">Tambah Data</a>
-                                </li>
-                            </ul>
-                        </li> --}}
                     </ul>
                 </div>
             </div>
-            <
+            
             {{-- /sidebar --}}
 
 
@@ -161,9 +153,9 @@
                 {{-- breadcumb --}}
                 <div class="page-title">
 
-                   @yield('title-breadcumb-1'){{-- <h3></h3> --}}
+                 @yield('title-breadcumb-1'){{-- <h3></h3> --}}
 
-                   <div class="page-breadcrumb">
+                 <div class="page-breadcrumb">
                     <ol class="breadcrumb">
 
                         @yield('title-breadcumb-2')

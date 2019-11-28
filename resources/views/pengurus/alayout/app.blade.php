@@ -131,13 +131,13 @@
                         <li class="
                         {{ (request()->routeIs(
 
-                            'ViewPengurusShowMahasiswa'
+                            'ViewPengurusShowPendaftar'
 
                             )) ? 'active' : '' }}
                             ">
-                            <a href="{{route('ViewPengurusShowMahasiswa')}}" class="waves-effect waves-button">
+                            <a href="{{route('ViewPengurusShowPendaftar')}}" class="waves-effect waves-button">
                                 <span class="menu-icon glyphicon glyphicon-education"></span>
-                                <p>Mahasiswa</p>
+                                <p>Pendaftar</p>
                             </a>
                         </li>
 

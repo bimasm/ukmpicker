@@ -67,6 +67,12 @@ Route::post('/admin/jurusan/edit', 'AdminActionsController@editjurusan')
 Route::get('/mahasiswa/dashboard', 'MahasiswaController@view_dashboard')
 ->name('ViewMahasiswaDashboard')->middleware('auth:mahasiswa');
 
+Route::get('/mahasiswa/ukm', 'MahasiswaController@view_show_ukm')
+->name('ViewMahasiswaUkm')->middleware('auth:mahasiswa');
+
+Route::get('/mahasiswa/pendaftaran', 'MahasiswaController@view_show_pendafatran')
+->name('ViewMahasiswaPendaftaran')->middleware('auth:mahasiswa');
+
 ///////////////////////////////////////////////////////////////////////////// Pengurus
 Route::get('/pengurus/dashboard', 'PengurusController@view_dashboard')
 ->name('ViewPengurusDashboard')->middleware('auth:pengurus');
@@ -74,8 +80,8 @@ Route::get('/pengurus/dashboard', 'PengurusController@view_dashboard')
 Route::get('/pengurus/ukm', 'PengurusController@view_show_ukm')
 ->name('ViewPengurusShowUkm')->middleware('auth:pengurus');
 
-Route::get('/pengurus/mahasiswa', 'PengurusController@view_show_mahasiswa')
-->name('ViewPengurusShowMahasiswa')->middleware('auth:pengurus');
+Route::get('/pengurus/pendaftar', 'PengurusController@view_show_pendaftar')
+->name('ViewPengurusShowPendaftar')->middleware('auth:pengurus');
 
 Route::get('/pengurus/edit-profile', 'PengurusController@view_show_edit_profile')
 ->name('ViewPengurusShowEditProfile')->middleware('auth:pengurus');

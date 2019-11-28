@@ -15,7 +15,7 @@
 @section('konten')
 <div class="row">
 	<div class="col-md-3">
-		<button type="button" class="btn btn-success btn-rounded">Edit Data</button>
+		<button type="button" class="btn btn-success btn-rounded" data-toggle="modal" data-target="#modal2">Edit Data</button>
 	</div>
 </div>
 <br>
@@ -24,12 +24,26 @@
 		<div class="panel panel-white">
 			<div class="row">
 				<div class="col-sm-8">
-					<div class="visitors-chart">
-						<div class="panel-heading">
-							<h4 class="panel-title">Deskripsi</h4>
+					<div class="row">
+						<div class="col-sm-12">
+							<div class="visitors-chart">
+								<div class="panel-heading">
+									<h4 class="panel-title">Deskripsi</h4>
+								</div>
+								<div class="panel-body">
+									<p>tes</p>
+								</div>
+							</div>
 						</div>
-						<div class="panel-body">
-							<p>tes</p>
+						<div class="col-sm-12">
+							<div class="visitors-chart">
+								<div class="panel-heading">
+									<h4 class="panel-title">Proker</h4>
+								</div>
+								<div class="panel-body">
+									<p>tes</p>
+								</div>
+							</div>
 						</div>
 					</div>
 				</div>
@@ -47,6 +61,36 @@
 						</div>
 					</div>
 				</div>
+			</div>
+		</div>
+	</div>
+</div>
+
+<div class="modal fade" id="modal2" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+	<div class="modal-dialog" role="document">
+		<div class="modal-content">
+			<div class="modal-header">
+				<h5 class="modal-title" id="exampleModalLabel">Edit Jurusan</h5>
+			</div>
+			<div class="modal-body">
+				<div class="form-group">
+					<label for="exampleInputEmail1">Deskripsi</label>
+					<textarea name="deskripsi" class="area form-control" rows="0" cols="50">
+					</textarea>
+				</div>
+				<div class="form-group">
+					<label for="exampleInputEmail1">Proker</label>
+					<textarea name="deskripsi" class="area form-control" rows="0" cols="50">
+					</textarea>
+				</div>
+				<div class="form-group">
+					<label for="exampleInputFile">Logo UKM</label>
+					<input name="logoukm" type="file" id="exampleInputFile" class="up form-control">
+				</div>
+			</div>
+			<div class="modal-footer">
+				<button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+				<button type="submit" class="btn btn-success">Save changes</button>
 			</div>
 		</div>
 	</div>

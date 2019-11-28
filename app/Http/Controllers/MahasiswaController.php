@@ -10,4 +10,14 @@ class MahasiswaController extends Controller
     {
     	return view('mahasiswa.dashboard.dashboard');
     }
+
+    public function view_show_ukm()
+    {
+    	return view('mahasiswa.ukm.ukm-show');
+    }
+
+    public function view_show_pendafatran()
+    {
+    	return view('mahasiswa.pendaftaran.pendaftaran-show');
+    }
 }
