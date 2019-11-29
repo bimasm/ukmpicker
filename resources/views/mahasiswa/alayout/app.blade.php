@@ -17,6 +17,7 @@
     <link href="{{asset('plugins/switchery/switchery.min.css')}}" rel="stylesheet" type="text/css"/>
     <link href="{{asset('plugins/3d-bold-navigation/css/style.css')}}" rel="stylesheet" type="text/css"/> 
     <link href="{{asset('plugins/slidepushmenus/css/component.css')}}" rel="stylesheet" type="text/css"/>
+    <link href="{{asset('plugins/gridgallery/css/component.css')}}" rel="stylesheet" type="text/css"/>
 
     <link href="{{asset('plugins/datatables/css/jquery.datatables.min.css')}}" rel="stylesheet" type="text/css"/>    
     <link href="{{asset('plugins/datatables/css/jquery.datatables_themeroller.css')}}" rel="stylesheet" type="text/css"/>
@@ -114,7 +115,8 @@
                         <li class="
                         {{ (request()->routeIs(
 
-                            'ViewMahasiswaUkm'
+                            'ViewMahasiswaUkm',
+                            'ViewMahasiswaDetailUkm'
 
                             )) ? 'active' : '' }}
                             ">
@@ -201,6 +203,12 @@
     <script src="{{asset('plugins/x-editable/bootstrap3-editable/js/bootstrap-editable.js')}}"></script>
     <script src="{{asset('plugins/jquery-mockjax-master/jquery.mockjax.js')}}"></script>
     <script src="{{asset('plugins/moment/moment.js')}}"></script>
+
+    <script src="{{asset('js/pages/gallery.js')}}"></script>
+    <script src="{{asset('plugins/gridgallery/js/imagesloaded.pkgd.min.js')}}"></script>
+    <script src="{{asset('plugins/gridgallery/js/masonry.pkgd.min.js')}}"></script>
+    <script src="{{asset('plugins/gridgallery/js/classie.js')}}"></script>
+    <script src="{{asset('plugins/gridgallery/js/cbpgridgallery.js')}}"></script>
 
     
 </body>

@@ -17,6 +17,7 @@
     <link href="{{asset('plugins/switchery/switchery.min.css')}}" rel="stylesheet" type="text/css"/>
     <link href="{{asset('plugins/3d-bold-navigation/css/style.css')}}" rel="stylesheet" type="text/css"/> 
     <link href="{{asset('plugins/slidepushmenus/css/component.css')}}" rel="stylesheet" type="text/css"/>
+    <link href="{{asset('plugins/gridgallery/css/component.css')}}" rel="stylesheet" type="text/css"/>
 
     <link href="{{asset('plugins/datatables/css/jquery.datatables.min.css')}}" rel="stylesheet" type="text/css"/>    
     <link href="{{asset('plugins/datatables/css/jquery.datatables_themeroller.css')}}" rel="stylesheet" type="text/css"/>
@@ -211,7 +212,13 @@
     <script src="{{asset('plugins/offcanvasmenueffects/js/main.js')}}"></script>
     <script src="{{asset('plugins/waves/waves.min.js')}}"></script>
     <script src="{{asset('plugins/3d-bold-navigation/js/main.js')}}"></script>
+    
+    <script src="{{asset('plugins/gridgallery/js/imagesloaded.pkgd.min.js')}}"></script>
+    <script src="{{asset('plugins/gridgallery/js/masonry.pkgd.min.js')}}"></script>
+    <script src="{{asset('plugins/gridgallery/js/classie.js')}}"></script>
+    <script src="{{asset('plugins/gridgallery/js/cbpgridgallery.js')}}"></script>
     <script src="{{asset('js/modern.min.js')}}"></script>
+    <script src="{{asset('js/pages/gallery.js')}}"></script>
 
     <script src="{{asset('js/pages/table-data.js')}}"></script>
     <script src="{{asset('plugins/datatables/js/jquery.datatables.min.js')}}"></script>

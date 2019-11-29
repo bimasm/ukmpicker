@@ -14,8 +14,16 @@
 
 @section('konten')
 <div class="row">
-	<div class="col-md-3">
-		<button type="button" class="btn btn-success btn-rounded" data-toggle="modal" data-target="#modal2">Edit Data</button>
+	<div class="col-md-5">
+		<div class="col-md-3">
+			<button type="button" class="btn btn-success btn-rounded" data-toggle="modal" data-target="#modal2">Edit Data</button>
+		</div>
+		<div class="col-md-4">
+			<button type="button" class="btn btn-success btn-rounded" data-toggle="modal" data-target="#modal3">Tambah Proker</button>
+		</div>
+		<div class="col-md-4">
+			<button type="button" class="btn btn-success btn-rounded" data-toggle="modal" data-target="#modal4">Tambah Gallery</button>
+		</div>
 	</div>
 </div>
 <br>
@@ -41,7 +49,29 @@
 									<h4 class="panel-title">Proker</h4>
 								</div>
 								<div class="panel-body">
-									<p>tes</p>
+									
+									<div class="table-responsive">
+										<table class="table">
+											<thead>
+												<tr>
+													<th>No</th>
+													<th>Proker</th>
+													<th>Action</th>
+												</tr>
+											</thead>
+											<tbody>
+												<tr>
+													<th scope="row">1</th>
+													<td>Proker</td>
+													<td>
+														<button type="button" class="btn btn-warning btn-rounded">Edit</button>
+														<button type="button" class="btn btn-danger btn-rounded">Hapus</button>
+													</td>
+												</tr>
+											</tbody>
+										</table>
+									</div>
+
 								</div>
 							</div>
 						</div>
@@ -66,6 +96,42 @@
 	</div>
 </div>
 
+<div class="row">
+	<div class="col-md-12">
+		<div class="panel panel-white">
+			<div class="visitors-chart">
+				<div class="panel-heading">
+					<h4 class="panel-title">Image</h4>
+				</div>
+				<div class="panel-body">
+
+					<div class="table-responsive">
+						<table class="table">
+							<thead>
+								<tr>
+									<th>No</th>
+									<th>Image</th>
+									<th>Action</th>
+								</tr>
+							</thead>
+							<tbody>
+								<tr>
+									<th scope="row">1</th>
+									<td><img src="assets/images/post-image.jpg" alt=""></td>
+									<td>
+										<button type="button" class="btn btn-danger btn-rounded">Hapus</button>
+									</td>
+								</tr>
+							</tbody>
+						</table>
+					</div>
+
+				</div>
+			</div>
+		</div>
+	</div>
+</div>
+
 <div class="modal fade" id="modal2" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
 	<div class="modal-dialog" role="document">
 		<div class="modal-content">
@@ -80,7 +146,7 @@
 				</div>
 				<div class="form-group">
 					<label for="exampleInputEmail1">Proker</label>
-					<textarea name="deskripsi" class="area form-control" rows="0" cols="50">
+					<textarea name="proker" class="area form-control" rows="0" cols="50">
 					</textarea>
 				</div>
 				<div class="form-group">
@@ -91,6 +157,47 @@
 			<div class="modal-footer">
 				<button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
 				<button type="submit" class="btn btn-success">Save changes</button>
+			</div>
+		</div>
+	</div>
+</div>
+
+<div class="modal fade" id="modal3" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+	<div class="modal-dialog" role="document">
+		<div class="modal-content">
+			<div class="modal-header">
+				<h5 class="modal-title" id="exampleModalLabel">Tambah Proker</h5>
+			</div>
+			<div class="modal-body">
+				<div class="form-group">
+					<label for="exampleInputEmail1">Proker</label>
+					<textarea name="proker" class="area form-control" rows="0" cols="50">
+					</textarea>
+				</div>
+			</div>
+			<div class="modal-footer">
+				<button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+				<button type="submit" class="btn btn-success">Submit</button>
+			</div>
+		</div>
+	</div>
+</div>
+
+<div class="modal fade" id="modal4" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+	<div class="modal-dialog" role="document">
+		<div class="modal-content">
+			<div class="modal-header">
+				<h5 class="modal-title" id="exampleModalLabel">Tambah Gallery</h5>
+			</div>
+			<div class="modal-body">
+				<div class="form-group">
+					<label for="exampleInputFile">Foto Gallery</label>
+					<input name="foto" type="file" id="exampleInputFile" class="up form-control">
+				</div>
+			</div>
+			<div class="modal-footer">
+				<button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+				<button type="submit" class="btn btn-success">Submit</button>
 			</div>
 		</div>
 	</div>

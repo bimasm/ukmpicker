@@ -21,6 +21,9 @@ Route::post('/login', 'LoginController@postLogin');
 Route::get('/logout', 'LoginController@logout');
 Route::get('/signout', 'LoginController@signout');
 
+Route::get('/registrasi', 'MahasiswaController@view_regis')
+->name('ViewRegis')->middleware('guest');
+
 //////////////////////////////////////////////////////////////////////////// admin show
 Route::get('/admin/dashboard', 'AdminController@view_dashboard')
 ->name('ViewAdminDashboard')->middleware('auth:admin');
@@ -80,6 +83,7 @@ Route::get('/admin/deletejurusan/{id}', 'AdminActionsController@deletejurusan')
 
 
 ///////////////////////////////////////////////////////////////////////////// Mahasiswa
+
 Route::get('/mahasiswa/dashboard', 'MahasiswaController@view_dashboard')
 ->name('ViewMahasiswaDashboard')->middleware('auth:mahasiswa');
 
@@ -91,6 +95,9 @@ Route::get('/mahasiswa/pendaftaran', 'MahasiswaController@view_show_pendafatran'
 //mahasiswa input
 Route::post('/mahasiswa/pilih', 'MahasiswaActionsController@daftar')
 ->name('PostMahasiswaPendaftaran')->middleware('auth:mahasiswa');
+
+Route::get('/mahasiswa/detail/ukm', 'MahasiswaController@view_detail_ukm')
+->name('ViewMahasiswaDetailUkm')->middleware('auth:mahasiswa');
 
 ///////////////////////////////////////////////////////////////////////////// Pengurus
 Route::get('/pengurus/dashboard', 'PengurusController@view_dashboard')
@@ -104,4 +111,6 @@ Route::get('/pengurus/pendaftar', 'PengurusController@view_show_pendaftar')
 
 Route::get('/pengurus/edit-profile', 'PengurusController@view_show_edit_profile')
 ->name('ViewPengurusShowEditProfile')->middleware('auth:pengurus');
+
+
 

@@ -35,20 +35,45 @@
                         <div class="login-box panel panel-white s3 u-rad">
                             <div class="panel-body">
                                 <div class="row">
-                                    <div class="col-md-6">
-                                    </div>
-                                    <div class="col-md-6">
-                                        <form action="/login" method="post">
-                                            @csrf
+                                    <div class="col-md-12">
+                                        <form action="" method="POST" class="form-horizontal">
+                                            @csrf               
                                             <div class="form-group">
-                                                <input type="text" class="form-control input-rounded" placeholder="Email" name="username" required>
+                                                <label for="input-rounded" class="col-sm-2 control-label">Nama</label>
+                                                <div class="col-sm-10">
+                                                    <input name="nama" type="text" class="form-control input-rounded" id="input-rounded">
+                                                </div>
                                             </div>
                                             <div class="form-group">
-                                                <input type="password" class="form-control input-rounded" placeholder="Password" name="password" required>
+                                                <label for="input-rounded" class="col-sm-2 control-label">NIM</label>
+                                                <div class="col-sm-10">
+                                                    <input name="nim" type="text" class="form-control input-rounded" id="input-rounded">
+                                                </div>
                                             </div>
-                                            <button type="submit" class="btn btn-success btn-block btn-rounded">Login</button>
-                                            <p class="text-center m-t-xs text-sm">Do not have an account?</p>
-                                            <a href="{{route('ViewRegis')}}" class="btn btn-default btn-block m-t-md">Create an account</a>
+                                            <div class="form-group">
+                                                <label for="input-rounded" class="col-sm-2 control-label">Password</label>
+                                                <div class="col-sm-10">
+                                                    <input name="password" type="password" class="form-control input-rounded" id="input-rounded">
+                                                </div>
+                                            </div>
+                                            <div class="form-group">
+                                                <label class="col-sm-2 control-label">Jurusan</label>
+                                                <div class="col-sm-10">
+                                                    <select name="jurusan" class="form-control m-b-sm">
+                                                        @foreach($jurusan as $jr)
+                                                        <option value="{{$jr->id}}">{{$jr->nama}}</option>
+                                                        @endforeach
+                                                    </select>
+                                                </div>
+                                            </div>
+
+                                            <div class="form-group">
+                                                <div class="col-sm-offset-2 col-sm-10">
+                                                    <center>
+                                                        <button type="submit" class="btn btn-success btn-rounded" style="width: 50%;">Sumbit</button>
+                                                    </center>
+                                                </div>
+                                            </div>
                                         </form>
                                     </div>
                                 </div>
