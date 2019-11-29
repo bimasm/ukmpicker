@@ -7,6 +7,8 @@ use App\Ukm;
 use App\Pendaftar;
 use Auth;
 use App\Jurusan;
+use App\Proker;
+use App\Fotoukm;
 
 
 class MahasiswaController extends Controller
@@ -29,9 +31,12 @@ class MahasiswaController extends Controller
     	return view('mahasiswa.pendaftaran.pendaftaran-show',compact('data'));
     }
 
-    public function view_detail_ukm()
+    public function view_detail_ukm($id)
     {
-        return view('mahasiswa.ukm.ukm-detail');
+        $data=Ukm::where('id',$id)->get();
+        $proker=Proker::where('id_ukm',$id)->get();
+        $foto=Fotoukm::where('id_ukm',$id)->get();
+        return view('mahasiswa.ukm.ukm-detail',compact('data','proker','foto'));
     }
 
     public function view_regis()

@@ -13,5 +13,5 @@
 @endsection
 
 @section('konten')
-tes
+
 @endsection

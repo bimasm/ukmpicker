@@ -73,7 +73,7 @@
                                     <img class="img-circle avatar" src="assets/images/avatar1.png" width="40" height="40" alt="">
                                 </a>
                                 <ul class="dropdown-menu dropdown-list" role="menu">
-                                    <li role="presentation"><a href="profile.html"><i class="fa fa-user"></i>Profile</a></li>
+                                    
                                     <li role="presentation"><a href="/signout"><i class="fa fa-sign-out m-r-xs"></i>Log out</a></li>
                                 </ul>
                             </li>

@@ -28,7 +28,7 @@
 			<div class="panel-body">
 				<center>
 					<img class="img-circle" src="#" alt="">
-					<a href="{{route('ViewMahasiswaDetailUkm')}}" class="btn btn-success btn-rounded" style="width: 50%;">Detail</a>
+					<a href="{{url('mahasiswa/ukm').'/'.$dt->id}}" class="btn btn-success btn-rounded" style="width: 50%;">Detail</a>
 				</center>
 			</div>
 		</div>

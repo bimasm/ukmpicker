@@ -36,18 +36,18 @@
                             <div class="panel-body">
                                 <div class="row">
                                     <div class="col-md-12">
-                                        <form action="" method="POST" class="form-horizontal">
+                                        <form action="{{route('PostRegis')}}" method="POST" class="form-horizontal">
                                             @csrf               
                                             <div class="form-group">
                                                 <label for="input-rounded" class="col-sm-2 control-label">Nama</label>
                                                 <div class="col-sm-10">
-                                                    <input name="nama" type="text" class="form-control input-rounded" id="input-rounded">
+                                                    <input name="namamhs" type="text" class="form-control input-rounded" id="input-rounded">
                                                 </div>
                                             </div>
                                             <div class="form-group">
                                                 <label for="input-rounded" class="col-sm-2 control-label">NIM</label>
                                                 <div class="col-sm-10">
-                                                    <input name="nim" type="text" class="form-control input-rounded" id="input-rounded">
+                                                    <input name="nimmhs" type="text" class="form-control input-rounded" id="input-rounded">
                                                 </div>
                                             </div>
                                             <div class="form-group">

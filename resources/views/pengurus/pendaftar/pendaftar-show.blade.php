@@ -40,17 +40,26 @@
 					</tr>
 				</tfoot>
 				<tbody>
+					@php
+					$no=1;
+					@endphp
+					@foreach($data as $dt)
 					<tr>
-						<td class="no">1</td>
-						<td>Sita love Baim</td>
-						<td>Sistem Informasi</td>
-						<td>Status</td>
+						<td class="no">{{$no++}}</td>
+						<td>{{\App\Mahasiswa::where('id',$dt->id_mahasiswa)->value('nama')}}</td>
+						<td>{{\App\Jurusan::where('id',\App\Mahasiswa::where('id',$dt->id_mahasiswa)->value('id_jurusan'))->value('nama')}}</td>
+						<td>{{$dt->status}}</td>
 						<td>
-							<button type="button" class="btn btn-warning btn-rounded">Pending</button>
-							<button type="button" class="btn btn-success btn-rounded">Terima</button>
-							<button type="button" class="btn btn-danger btn-rounded">Tolak</button>
+							@if($dt->status!='diterima')
+							{{-- <button type="button" class="btn btn-warning btn-rounded">Pending</button> --}}
+							<a href="pendaftar/{{$dt->id}}">
+							<button type="button" class="btn btn-success btn-rounded">Terima</button></a>
+							@else
+							
+							@endif
 						</td>
 					</tr>
+					@endforeach
 				</tbody>
 			</table>  
 		</div>

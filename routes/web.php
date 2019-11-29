@@ -23,6 +23,8 @@ Route::get('/signout', 'LoginController@signout');
 
 Route::get('/registrasi', 'MahasiswaController@view_regis')
 ->name('ViewRegis')->middleware('guest');
+Route::post('/regis', 'MahasiswaActionsController@regis')
+->name('PostRegis');
 
 //////////////////////////////////////////////////////////////////////////// admin show
 Route::get('/admin/dashboard', 'AdminController@view_dashboard')
@@ -96,7 +98,7 @@ Route::get('/mahasiswa/pendaftaran', 'MahasiswaController@view_show_pendafatran'
 Route::post('/mahasiswa/pilih', 'MahasiswaActionsController@daftar')
 ->name('PostMahasiswaPendaftaran')->middleware('auth:mahasiswa');
 
-Route::get('/mahasiswa/detail/ukm', 'MahasiswaController@view_detail_ukm')
+Route::get('/mahasiswa/ukm/{id}', 'MahasiswaController@view_detail_ukm')
 ->name('ViewMahasiswaDetailUkm')->middleware('auth:mahasiswa');
 
 ///////////////////////////////////////////////////////////////////////////// Pengurus
@@ -105,7 +107,18 @@ Route::get('/pengurus/dashboard', 'PengurusController@view_dashboard')
 
 Route::get('/pengurus/ukm', 'PengurusController@view_show_ukm')
 ->name('ViewPengurusShowUkm')->middleware('auth:pengurus');
-
+Route::post('/pengurus/ukm', 'PengurusActionsController@editukm')
+->name('PostPengurusEditUkm')->middleware('auth:pengurus');
+Route::post('/pengurus/ukm/addproker', 'PengurusActionsController@addproker')
+->name('PostPengurusAddProker')->middleware('auth:pengurus');
+Route::post('/pengurus/ukm/addfoto', 'PengurusActionsController@addfoto')
+->name('PostPengurusAddFoto')->middleware('auth:pengurus');
+Route::get('/pengurus/ukm/delproker/{id}', 'PengurusActionsController@deleteproker')
+->name('PengurusDelProker')->middleware('auth:pengurus');
+Route::get('/pengurus/ukm/delfoto/{id}', 'PengurusActionsController@deletefoto')
+->name('PengurusDelFoto')->middleware('auth:pengurus');
+Route::get('/pengurus/pendaftar/{id}', 'PengurusActionsController@terima')
+->name('terima')->middleware('auth:pengurus');
 Route::get('/pengurus/pendaftar', 'PengurusController@view_show_pendaftar')
 ->name('ViewPengurusShowPendaftar')->middleware('auth:pengurus');
 

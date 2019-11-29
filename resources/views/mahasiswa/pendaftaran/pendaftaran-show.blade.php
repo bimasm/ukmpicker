@@ -35,7 +35,7 @@
 						<th>Status</th>
 					</tr>
 				</tfoot>
-				<tbody>
+				<tbody> 
 					@php
 					$no=1;
 					@endphp
